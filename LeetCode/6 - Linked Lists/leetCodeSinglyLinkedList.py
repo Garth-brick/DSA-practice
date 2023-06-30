@@ -6,6 +6,14 @@ class ListNode:
         self.val = val
         self.next: Optional[ListNode] = None
 
+    def print(self):
+        # to print from a given listnode onwards
+        curr: Optional[ListNode] = self
+        while (curr):
+            print(curr.val, end=" ")
+            curr = curr.next
+        print()
+
 class LinkedList:
     def __init__(self, arr: Optional[list] = None):
         self.head: Optional[ListNode] = None
