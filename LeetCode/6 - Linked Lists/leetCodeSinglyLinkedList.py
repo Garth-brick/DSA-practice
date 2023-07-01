@@ -2,9 +2,9 @@ from typing import Any, Optional, List
 
 
 class ListNode:
-    def __init__(self, val=0):
+    def __init__(self, val=0, next=None):
         self.val = val
-        self.next: Optional[ListNode] = None
+        self.next: Optional[ListNode] = next
 
     def print(self):
         # to print from a given listnode onwards
