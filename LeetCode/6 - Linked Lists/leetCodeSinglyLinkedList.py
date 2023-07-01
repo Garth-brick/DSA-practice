@@ -6,6 +6,9 @@ class ListNode:
         self.val = val
         self.next: Optional[ListNode] = next
 
+    def __str__(self):
+        return f"{self.val}"
+
     def print(self):
         # to print from a given listnode onwards
         curr: Optional[ListNode] = self
