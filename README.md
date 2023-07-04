@@ -11,12 +11,12 @@ Practicing Data Structures and Algorithms in C++ and Python
   4. Stack
   5. Binary Search
   6. Linked Lists
+  7. Trees
 - The repositories contain solutions I came up with while following the list of 150 questions at: neetcode.io/practice
 
 ## DSA Implementaions
 - This includes a set of Data Strucutres and Algorithms that I wrote out myself in order to help understand how these were implemented
 - An attempt was made to follow principles of OOP and to make these implementations as generic as possible
-
 
 ## Reaching Out
 Please reach out if you believe that any improvements can be made, I would appreciate any feedback or request for collaboration <3
