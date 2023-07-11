@@ -3,8 +3,8 @@ from typing import List, Set, Tuple
 
 def exist (board: List[List[str]], word: str) -> bool:
     usedCoordinates: Set[Tuple[int, int]] = set()
-    ROWS = len(board)
-    COLS = len(board[0])
+    ROWS: int = len(board)
+    COLS: int = len(board[0])
     deltas = ((-1,0), (0,-1), (1,0), (0,1))
     
     def dfs(row: int, col: int, i: int):
@@ -27,7 +27,7 @@ def exist (board: List[List[str]], word: str) -> bool:
         usedCoordinates.add((row, col))
         
         # checking in all four directions
-        result = False
+        result: bool = False
         for delta in deltas:
             result = result or dfs(row + delta[0], col + delta[1], i + 1)
             if result: break
