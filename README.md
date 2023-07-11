@@ -13,6 +13,8 @@ Practicing Data Structures and Algorithms in C++ and Python
   6. Linked Lists
   7. Trees
   8. Tries
+  9. Priority Queues
+  10. Backtracking
 - The repositories contain solutions I came up with while following the list of 150 questions at: neetcode.io/practice
 
 ## DSA Implementaions
