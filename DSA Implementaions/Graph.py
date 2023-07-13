@@ -43,19 +43,12 @@ class Graph:
         
         # {vertex: {set of neighbours}}
         self._neighborList: Dict[Graph.GraphNode, Set[Graph.GraphNode]] = {}
-        
-        # TODO stores number of components in the graph
-        self._components = 0
     
     def __len__(self) -> int:
         return len(self._vertices)
     
     def __bool__(self) -> bool:
         return bool(len(self))
-    
-    @property
-    def components(self):
-        return self._components
     
     def createVertex(self, val: Any) -> 'Graph.GraphNode':
         # creatiing a new GraphNode from the given value
@@ -66,9 +59,6 @@ class Graph:
         
         # addinng the new vertex as a key to the edglist without any neighbors
         self._neighborList[newGraphNode] = set()
-        
-        # a new vertex would always be a new component at the start
-        self._components += 1
         
         return newGraphNode
     
