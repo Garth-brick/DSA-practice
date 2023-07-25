@@ -8,6 +8,7 @@ import heapq
 import collections
 from typing import List, Tuple
 
+# THIS LEADS TO APPENDING THE NODE MULTIPLE TIMES IF THERE ARE MULTIPLE PATHS TO IT
 
 def shortestPath(
     graph: collections.defaultdict[str, List[Tuple[str, int]]], 
