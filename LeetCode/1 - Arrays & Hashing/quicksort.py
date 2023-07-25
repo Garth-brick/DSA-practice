@@ -49,10 +49,6 @@ def quicksort(arr: List[int], left: int, right: int) -> None:
         partition_position = partition(arr, left, right)
         quicksort(arr, left, partition_position-1)
         quicksort(arr, partition_position+1, right)
-        
-        
-    
-    
             
 
 arr = [2, 6, 5, 1, 7, 4, 3]
