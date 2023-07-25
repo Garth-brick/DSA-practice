@@ -6,10 +6,6 @@ from typing import Any, Dict, List, Set, Tuple
 - Implementing a graph data structure using a GraphNode objects as vertices and a globally accessible list of all the edges in the graph
 """
 
-""" TODO
-- Implement union-find on this graph
-- Implement Dijkstra
-"""
 
 
 class Graph:
