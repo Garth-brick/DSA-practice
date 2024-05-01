@@ -6,18 +6,31 @@
 
 import heapq
 import collections
-from typing import List, Tuple
+
+class Edge:
+    def __init__(self, source: str, dest: str, weight: int=1) -> None:
+        self._source = source 
+        self._dest = dest
+        self._weight = weight
+    
+    def __lt__(self, other: object) -> bool:
+        assert isinstance(other, Edge), f"'<' comparison can only be done between two edges. {other} is not an instance of Edge"
+        return self._weight < other._weight
+    
+    def __eq__(self, other: object) -> bool:
+        assert isinstance(other, Edge), f"'==' comparison can only be done between two edges. {other} is not an instance of Edge"
+        return self._weight < other._weight
+        
 
 # THIS LEADS TO APPENDING THE NODE MULTIPLE TIMES IF THERE ARE MULTIPLE PATHS TO IT
 
 def shortestPath(
-    graph: collections.defaultdict[str, List[Tuple[str, int]]], 
-    SOURCE: str, 
-    TARGET: str
+    graph: collections.defaultdict[str, list[tuple[str, int]]], 
+    SOURCE: str, TARGET: str
     ):
     
     # put the cost first because we want the heap to be ordered by the cost
-    heap: List[Tuple[int, str]] = []
+    heap: list[tuple[int, str]] = []
     heapq.heappush(heap, (0, SOURCE))
     
     # heappop will return the vertex with the least cost which we can take next
@@ -32,7 +45,7 @@ def shortestPath(
     return -1
 
 
-graph: collections.defaultdict[str, List[Tuple[str, int]]] = collections.defaultdict(list)
+graph: collections.defaultdict[str, list[tuple[str, int]]] = collections.defaultdict(list)
 V, E = map(int, input().strip().split())
 for _ in range(E):
     v1, v2, w = input().strip().split()
