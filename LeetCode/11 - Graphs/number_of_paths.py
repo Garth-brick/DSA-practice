@@ -1,6 +1,6 @@
 from typing import Dict, List, Set, Tuple, Optional
 
-def numberOfPaths(neighborList: Dict[str, List[str]], source: str, target: str):
+def numberOfPaths(neighborList: Dict[str, List[str]], source: str, target: str) -> int:
     
     if source not in neighborList or target not in neighborList:
         return 0

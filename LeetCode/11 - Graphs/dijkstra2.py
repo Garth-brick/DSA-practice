@@ -1,7 +1,7 @@
 import queue
 import collections
 
-# THIS LEADS TO APPENDING THE NODE MULTIPLE TIMES IF THERE ARE MULTIPLE PATHS TO IT
+# THIS LEADS TO APPENDING A NODE MULTIPLE TIMES IF THERE ARE MULTIPLE PATHS TO IT
 
 def shortestPath(graph: collections.defaultdict[str, list[tuple[str, int]]], SOURCE: str, TARGET: str):
     pq: queue.PriorityQueue[tuple[int, str]] = queue.PriorityQueue()
@@ -14,7 +14,7 @@ def shortestPath(graph: collections.defaultdict[str, list[tuple[str, int]]], SOU
         for nei, wt in graph[vertex]:
             pq.put((cost + wt, nei))
     return -1
-    
+
 
 bidirectional = False
 graph: collections.defaultdict[str, list[tuple[str, int]]] = collections.defaultdict(list)
@@ -25,7 +25,6 @@ for _ in range(EDGE_COUNT):
     if bidirectional:
         graph[v2].append((v1, int(w)))
 SOURCE, TARGET = input().strip().split()
-
 
 result = shortestPath(graph, SOURCE, TARGET)
 if result != -1:
